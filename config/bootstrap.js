@@ -11,10 +11,12 @@
 
 module.exports.bootstrap = function(cb) {
   /**
+   * pre-setup
+   *
    * setup global variables to prevent unnecessary
    * inits of the same vars
    */
-  return rootSetup()
+  return preSetup()
   /**
    * setup redis as the datastore server
    */
@@ -42,6 +44,14 @@ module.exports.bootstrap = function(cb) {
    */
   .then(sails.services.resque.setup)
   /**
+   * setup socket.io framework
+   */
+  .then(sails.services.sockets.setup)
+  /**
+   * post setup
+  */
+  .then(postSetup)
+  /**
    * lift sails
    */
   .then(cb)
@@ -51,7 +61,7 @@ module.exports.bootstrap = function(cb) {
   .catch(sails.log.error)
 }
 
-function rootSetup() {
+function preSetup() {
 
 	sails.log.info('environment\t=>\t(' + process.env.NODE_ENV + ')')
 
@@ -84,6 +94,9 @@ function rootSetup() {
 	return require('bluebird').resolve()
 }
 
+function postSetup() {
+  return require('bluebird').resolve()
+}
 
 
 

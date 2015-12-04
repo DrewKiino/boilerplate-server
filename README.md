@@ -7,7 +7,8 @@
 
 ### Supports
 * scaling
-* REST api
+* rest api
+* web sockets
 * background jobs
 * noSQL object oriented database
 * auto-restart on save
