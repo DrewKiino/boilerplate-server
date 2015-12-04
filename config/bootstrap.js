@@ -53,6 +53,14 @@ module.exports.bootstrap = function(cb) {
 
 function rootSetup() {
 
+	sails.log.info('environment\t=>\t(' + process.env.NODE_ENV + ')')
+
+  /**
+   * global host name accessor
+   */
+
+  sails.HOST_NAME = require('os').hostname().split('.').shift()
+
   /**
    * global logging functions
    */
