@@ -66,7 +66,7 @@ module.exports.connections = {
   // },
   mongo: {
     adapter: 'sails-mongo',
-    url: process.env.MONGOLAB_URI || 'mongodb://localhost:27017/boilerplate'
+    url: process.env.MONGOLAB_URI || 'mongodb://localhost:27017/boilerplate-server'
     // outsourcing the mongodb means that you cannot alter or drop the database
     // locally
     // url: process.env.MONGOLAB_URI 
