@@ -13,7 +13,7 @@ export function setup() {
   // SET UP THE CONNECTION //
   ///////////////////////////
 
-  const connectionDetails = { redis: sails.REDIS_QUEUE }
+  const connectionDetails = sails.REDIS_QUEUE
 
   //////////////////////////////
   // DEFINE YOUR WORKER TASKS //
@@ -36,6 +36,7 @@ export function setup() {
       })
     }
   }
+
   const jobs = sails.JOBS
 
   const multiWorker = new (require('node-resque')).multiWorker({
