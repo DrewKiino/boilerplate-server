@@ -13,6 +13,8 @@
 * noSQL object oriented database
 * auto-restart on save
 
+**Please star this repository if you liked my work! :)**
+
 ### License
 The MIT License (MIT)
 
